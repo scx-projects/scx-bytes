@@ -1,5 +1,6 @@
-# SCX Bytes
-
+<p align="center">
+    <img src="https://scx.cool/scx-logo/scx-bytes-logo.svg" width="300px"  alt="scx-bytes-logo"/>
+</p>
 <p align="center">
     <a target="_blank" href="https://github.com/scx567888/scx-bytes/actions/workflows/ci.yml">
         <img src="https://github.com/scx567888/scx-bytes/actions/workflows/ci.yml/badge.svg" alt="CI"/>
