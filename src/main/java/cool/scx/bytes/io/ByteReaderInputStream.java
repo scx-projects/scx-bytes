@@ -63,5 +63,9 @@ public class ByteReaderInputStream extends InputStream {
     public void close() throws IOException {
         byteReader.close();
     }
+
+    public IByteReader byteReader() {
+        return byteReader;
+    }
     
 }
