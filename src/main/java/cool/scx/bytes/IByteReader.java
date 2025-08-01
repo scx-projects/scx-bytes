@@ -19,7 +19,7 @@ import static java.lang.Math.toIntExact;
 ///
 /// @author scx567888
 /// @version 0.0.1
-public interface IByteReader {
+public interface IByteReader extends AutoCloseable {
 
     byte read() throws NoMoreDataException, ByteSupplierException;
 
@@ -156,6 +156,11 @@ public interface IByteReader {
 
     default long inputStreamTransferTo(OutputStream out) throws IOException {
         return inputStreamTransferTo(out, Long.MAX_VALUE);
+    }
+
+    @Override
+    default void close() throws IOException {
+
     }
 
 }

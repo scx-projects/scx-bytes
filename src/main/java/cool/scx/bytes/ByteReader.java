@@ -326,4 +326,9 @@ public final class ByteReader implements IByteReader {
         }
     }
 
+    @Override
+    public void close() throws IOException {
+        byteSupplier.close();
+    }
+    
 }
