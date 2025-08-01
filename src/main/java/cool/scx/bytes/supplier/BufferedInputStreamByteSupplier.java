@@ -42,4 +42,9 @@ public final class BufferedInputStreamByteSupplier implements ByteSupplier {
         }
     }
 
+    @Override
+    public void close() throws IOException {
+        inputStream.close();
+    }
+    
 }

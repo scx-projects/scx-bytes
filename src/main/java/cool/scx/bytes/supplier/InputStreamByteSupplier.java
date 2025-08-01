@@ -66,4 +66,9 @@ public final class InputStreamByteSupplier implements ByteSupplier {
         }
     }
 
+    @Override
+    public void close() throws IOException {
+        inputStream.close();
+    }
+    
 }

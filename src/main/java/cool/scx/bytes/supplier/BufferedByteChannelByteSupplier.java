@@ -41,4 +41,9 @@ public final class BufferedByteChannelByteSupplier implements ByteSupplier {
         }
     }
 
+    @Override
+    public void close() throws IOException {
+        dataChannel.close();
+    }
+    
 }

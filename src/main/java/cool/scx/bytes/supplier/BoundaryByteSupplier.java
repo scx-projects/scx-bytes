@@ -7,6 +7,7 @@ import cool.scx.bytes.exception.NoMatchFoundException;
 import cool.scx.bytes.exception.NoMoreDataException;
 import cool.scx.bytes.indexer.KMPByteIndexer;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 /// BoundaryByteSupplier
@@ -68,6 +69,11 @@ public final class BoundaryByteSupplier implements ByteSupplier {
             // 如果底层 ByteReader 没数据了, 也返回 null
             return null;
         }
+    }
+
+    @Override
+    public void close() throws IOException {
+        dataReader.close();
     }
 
 }
