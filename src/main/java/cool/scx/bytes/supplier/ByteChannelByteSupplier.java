@@ -63,5 +63,5 @@ public final class ByteChannelByteSupplier implements ByteSupplier {
     public void close() throws IOException {
         dataChannel.close();
     }
-    
+
 }

@@ -330,5 +330,5 @@ public final class ByteReader implements IByteReader {
     public void close() throws IOException {
         byteSupplier.close();
     }
-    
+
 }

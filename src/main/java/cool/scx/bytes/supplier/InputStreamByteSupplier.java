@@ -70,5 +70,5 @@ public final class InputStreamByteSupplier implements ByteSupplier {
     public void close() throws IOException {
         inputStream.close();
     }
-    
+
 }

@@ -46,5 +46,5 @@ public final class BufferedInputStreamByteSupplier implements ByteSupplier {
     public void close() throws IOException {
         inputStream.close();
     }
-    
+
 }

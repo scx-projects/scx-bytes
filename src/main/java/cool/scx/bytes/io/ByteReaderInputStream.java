@@ -67,5 +67,5 @@ public class ByteReaderInputStream extends InputStream {
     public IByteReader byteReader() {
         return byteReader;
     }
-    
+
 }
