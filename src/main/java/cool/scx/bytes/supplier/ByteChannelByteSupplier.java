@@ -59,4 +59,9 @@ public final class ByteChannelByteSupplier implements ByteSupplier {
         }
     }
 
+    @Override
+    public void close() throws IOException {
+        dataChannel.close();
+    }
+
 }
