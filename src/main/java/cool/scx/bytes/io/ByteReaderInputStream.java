@@ -20,18 +20,8 @@ public class ByteReaderInputStream extends InputStream implements ByteReaderWrap
     }
 
     @Override
-    public int read(byte[] b) throws IOException {
-        return byteReader.inputStreamRead(b, 0, b.length);
-    }
-
-    @Override
     public int read(byte[] b, int off, int len) throws IOException {
         return byteReader.inputStreamRead(b, off, len);
-    }
-
-    @Override
-    public byte[] readAllBytes() throws IOException {
-        return byteReader.inputStreamReadNBytes(Integer.MAX_VALUE);
     }
 
     @Override
