@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class ByteReaderInputStream extends InputStream {
+public class ByteReaderInputStream extends InputStream implements ByteReaderWrapper {
 
     private final IByteReader byteReader;
 
@@ -64,6 +64,7 @@ public class ByteReaderInputStream extends InputStream {
         byteReader.close();
     }
 
+    @Override
     public IByteReader byteReader() {
         return byteReader;
     }

@@ -24,12 +24,12 @@ public interface IByteReader extends AutoCloseable {
     byte read() throws NoMoreDataException, ByteSupplierException;
 
     /// @param maxPullCount 底层最大拉取次数
-    <E extends Throwable> void read(ByteConsumer<E> byteConsumer, long maxLength, long maxPullCount) throws NoMoreDataException, ByteSupplierException, E;
+    <X extends Throwable> void read(ByteConsumer<X> byteConsumer, long maxLength, long maxPullCount) throws NoMoreDataException, ByteSupplierException, X;
 
     byte peek() throws NoMoreDataException, ByteSupplierException;
 
     /// @param maxPullCount 底层最大拉取次数
-    <E extends Throwable> void peek(ByteConsumer<E> byteConsumer, long maxLength, long maxPullCount) throws NoMoreDataException, ByteSupplierException, E;
+    <X extends Throwable> void peek(ByteConsumer<X> byteConsumer, long maxLength, long maxPullCount) throws NoMoreDataException, ByteSupplierException, X;
 
     /// @param maxPullCount 底层最大拉取次数
     long indexOf(ByteIndexer indexer, long maxLength, long maxPullCount) throws NoMatchFoundException, NoMoreDataException, ByteSupplierException;
@@ -56,7 +56,7 @@ public interface IByteReader extends AutoCloseable {
         return consumer.bytes();
     }
 
-    default <E extends Throwable> void read(ByteConsumer<E> byteConsumer, long maxLength) throws NoMoreDataException, ByteSupplierException, E {
+    default <X extends Throwable> void read(ByteConsumer<X> byteConsumer, long maxLength) throws NoMoreDataException, ByteSupplierException, X {
         read(byteConsumer, maxLength, Long.MAX_VALUE);
     }
 
@@ -70,7 +70,7 @@ public interface IByteReader extends AutoCloseable {
         return consumer.bytes();
     }
 
-    default <E extends Throwable> void peek(ByteConsumer<E> byteConsumer, long maxLength) throws NoMoreDataException, ByteSupplierException, E {
+    default <X extends Throwable> void peek(ByteConsumer<X> byteConsumer, long maxLength) throws NoMoreDataException, ByteSupplierException, X {
         peek(byteConsumer, maxLength, Long.MAX_VALUE);
     }
 

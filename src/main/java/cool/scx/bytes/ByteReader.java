@@ -81,7 +81,7 @@ public final class ByteReader implements IByteReader {
         }
     }
 
-    private <E extends Throwable> void walk(ByteConsumer<E> consumer, long maxLength, boolean movePointer, long maxPullCount) throws ByteSupplierException, E {
+    private <X extends Throwable> void walk(ByteConsumer<X> consumer, long maxLength, boolean movePointer, long maxPullCount) throws ByteSupplierException, X {
 
         var remaining = maxLength; // 剩余需要读取的字节数
         var n = head; // 用于循环的节点
@@ -191,7 +191,7 @@ public final class ByteReader implements IByteReader {
     }
 
     @Override
-    public <E extends Throwable> void read(ByteConsumer<E> byteConsumer, long maxLength, long maxPullCount) throws NoMoreDataException, ByteSupplierException, E {
+    public <X extends Throwable> void read(ByteConsumer<X> byteConsumer, long maxLength, long maxPullCount) throws NoMoreDataException, ByteSupplierException, X {
         if (maxLength > 0) {
             var pullCount = ensureAvailableOrThrow(maxPullCount);
             maxPullCount = maxPullCount - pullCount;
@@ -206,7 +206,7 @@ public final class ByteReader implements IByteReader {
     }
 
     @Override
-    public <E extends Throwable> void peek(ByteConsumer<E> byteConsumer, long maxLength, long maxPullCount) throws NoMoreDataException, ByteSupplierException, E {
+    public <X extends Throwable> void peek(ByteConsumer<X> byteConsumer, long maxLength, long maxPullCount) throws NoMoreDataException, ByteSupplierException, X {
         if (maxLength > 0) {
             var pullCount = ensureAvailableOrThrow(maxPullCount);
             maxPullCount = maxPullCount - pullCount;
